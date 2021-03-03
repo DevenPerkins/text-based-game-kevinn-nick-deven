@@ -4,19 +4,42 @@
 
 # Custom method that will print out each character one by one and then save the user's input in a variable:
 
-# def start_game
-#     'Here is the set up for our story. Please enter your name:'.each_char do |value|
-#       putc value
-#       sleep 0.05
-#     end
-#     puts
-#     gets.chomp
-#   end
-#   player_name = start_game
-
-
+def start_game
+    'Here is the set up for our story. Please enter your name:'.each_char do |value|
+      putc value
+      sleep 0.05
+    end
+    puts
+    gets.chomp
+end
+player_name = start_game 
+# puts player_name
 # Day in the life
 # Wake up to alarm 7am options [snooze or get up]
+def type_stuff string
+    string.each_char do |value|
+        putc value
+        sleep 0.05
+    end
+end
+
+type_stuff "Welcome to the day in the life of #{player_name}.\n"
+type_stuff "BEEP BEEP BEEP your alarm is going off its 7am (snooze / wakeup)\n"
+
+def wake_up 
+    puts "Enter: 1 for snooze\nEnter: 2 for wakeup"
+    gets.chomp
+end
+player_choice = wake_up
+player_xp = 100
+
+if player_choice == 1
+    player_xp = player_xp - 20
+else
+    player_xp = 100
+end
+
+puts player_xp
 
 #            _________________________
 #          ,'        _____            `.
@@ -131,16 +154,16 @@
 
 # Make dinner
 
-       _
-      / )
-|||| / /
-||||/ /
-\__(_/
- ||//
- ||/
- ||
-(||  
- ""
+#        _
+#       / )
+# |||| / /
+# ||||/ /
+# \__(_/
+#  ||//
+#  ||/
+#  ||
+# (||  
+#  ""
 
 # After dinner activities [COD, Beer, Sleep, Prep for zombies]
 
