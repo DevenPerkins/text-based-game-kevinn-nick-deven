@@ -7,7 +7,7 @@
 def start_game
     'Here is the set up for our story. Please enter your name:'.each_char do |value|
       putc value
-    #   sleep 0.05
+      sleep 0.05
     end
     puts
     gets.chomp
@@ -19,11 +19,12 @@ player_name = start_game
 def type_stuff string
     string.each_char do |value|
         putc value
-        # sleep 0.05
+        sleep 0.05
     end
 end
 
 type_stuff "Welcome to the day in the life of #{player_name}.\n"
+puts "\n" 
 type_stuff "BEEP BEEP BEEP....\n" 
 puts "
            _________________________
@@ -52,47 +53,50 @@ puts "
   |_______^______________|,|
   |                      |   SSt
 "
+puts "\n"
+puts "\n"
 type_stuff "your alarm is going off its 9am (snooze / wakeup)\n"
 def wake_up 
     puts "Enter: 1 for snooze\nEnter: 2 for wakeup"
     gets.chomp.to_i
 end
 player_choice = wake_up
-p player_choice.class
+# p player_choice.class
 player_xp = 100
-
+puts "\n"
 if player_choice == 1
     player_xp = player_xp - 20
      puts "snooze once 20min wake up at 9:20, you missed the morning news.\n"
 else
     player_xp = 100
-     puts "Get up head to the living room and turn on the news see apocolypse.\n"
+     puts "Get up head to the living room and turn on the news see apocolypse.\n
 
-        #             o
-        #    o    |
-        #     \   |
-        #      \  |
-        #       \.|-.
-        #       (\|  )
-        #    .==================.
-        #    | .--------------. |
-        #    | |::.::.::.::.::| |
-        #    | | :: :: :: :: :| |
-        #    | |::.::.::.::.::| |
-        #    | |: :: :: :: :: | |
-        #    | |::.::.::.::.::| |
-        #    |  -------------- o|
-        #    |       """""""   o|
-        #    |==================|
-        #    |  .------------.  |
-        #    | /              \ |
-        #    |/                \|
-        #    "                  "
-           
+                  o
+            o    |
+             \\   |
+              \\  |
+               \\.|-.
+               (\\|  )
+            .==================.
+            | .--------------. |
+            | |::.::.::.::.::| |
+            | | :: :: :: :: :| |
+            | |::.::.::.::.::| |
+            | |: :: :: :: :: | |
+            | |::.::.::.::.::| |
+            |  -------------- o|
+            |       -------   o|
+            |==================|
+            |  .------------.  |
+            | /              \ |
+            |/                \|
+            '                  '
+    "       
 end
 
-puts player_xp
-
+# puts player_xp
+puts "\n"
+puts "\n"
 type_stuff "You take dog for a walk and notice the neighbors are packign up thier belongings..\n"
 type_stuff "do you ask them why?\n"
 def neighbors 
@@ -100,6 +104,7 @@ def neighbors
         gets.chomp.to_i
 end
 player_choice = neighbors
+puts "\n"
 if player_choice == 1
     player_xp = player_xp - 20
      puts "you also forget to pick up dog's poop\n"
@@ -109,14 +114,17 @@ else
 end
 
 # Go to the gym [strength, cardio] -  !positive outcome?
+puts "\n"
+puts "\n"
 type_stuff "You get home, your dog got thier workout now it's time to get your's\n"
 type_stuff "You drive to the gym and notice a few strange things along the way but decide your workout is more important\n"
-type_stuff "You get to the gym and notice there is nobody there... strange.... but the real question is..."
+type_stuff "You get to the gym and notice there is nobody there... strange.... but the real question is...\n"
 def gym
     puts "Enter: 1 to get swole by pumping weights,\nEnter: 2 or run off that quarantine twenty on the treadmill\n"
         gets.chomp.to_i
 end
 player_choice = gym
+puts "\n"
 if player_choice == 1
     player_xp = player_xp + 10
      puts "You channel your inner Arnold something or other and get pumped\n"
@@ -146,6 +154,8 @@ end
     #     "                               "
 
 # Go to store notice all canned foods are gone hmm strange [xbox controller, toilet paper, weapons] - if miss news dont show weapons - ternary
+puts "\n"
+puts "\n"
 type_stuff "You bust out a sweat session and suddenly you remember you need to pick up some things at Food-N-Stuff before going home\n"
 type_stuff "You drive over to the store and notice nobody is on the road...\n"
 type_stuff "As you arrive at the store and notice that all the canned food is gone.. and you think to yourself 'is there another pandemic?'\n"
@@ -154,6 +164,7 @@ def everything_store
         gets.chomp.to_i
 end
 player_choice = everything_store 
+puts "\n"
 if player_choice == 1
     player_xp = player_xp - 30
      puts "You find a sweet deal on a knock off controller and snag it\n"
@@ -197,6 +208,8 @@ end
 
 
 # Get home from grocery store 
+puts "\n"
+puts "\n"
 type_stuff "You get home from the grocery store and fix yourself some nice top ramen to help stave off the hunger\n"
 # Make dinner
 
@@ -217,6 +230,7 @@ def end_of_die
         gets.chomp.to_i
 end
 player_choice = end_of_die
+puts "\n"
 if player_choice == 1
     player_xp = player_xp - 20
      puts "you get wicked drunk and PWN sme n00bz\n"
@@ -227,18 +241,21 @@ else
     player_xp = player_xp + 20
      puts "You hear scraching at your door and you go to take them on\n"
 end
+puts "\n"
+puts "\n"
 type_stuff "Here is the result of you crazy Saturday...\n"
+puts "\n"
 # def end_of_game
     if player_xp > 70
-        puts "You had a great day and you survived the day.. You're ready to take on the zombies\n"
+        type_stuff "You had a great day and you survived the day.. You're ready to take on the zombies\n"
     elsif player_xp < 70 && player_xp > 30
-        puts "You barly survive the night and your at the bottom of the totem pole.. good luck tommrrow\n"
+        type_stuff "You barly survive the night and your at the bottom of the totem pole.. good luck tommrrow\n"
     else 
-        puts "You're ripped apart limb by limb\n"
+        type_stuff "You're ripped apart limb by limb\n"
    
     end
 # end
-
+puts "\n"
 
 # puts end_of_game
 
