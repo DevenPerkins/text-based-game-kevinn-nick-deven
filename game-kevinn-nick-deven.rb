@@ -28,9 +28,10 @@ type_stuff "BEEP BEEP BEEP your alarm is going off its 7am (snooze / wakeup)\n"
 
 def wake_up 
     puts "Enter: 1 for snooze\nEnter: 2 for wakeup"
-    gets.chomp
+    gets.chomp.to_i
 end
 player_choice = wake_up
+p player_choice.class
 player_xp = 100
 
 if player_choice == 1
